@@ -1,0 +1,20 @@
+
+<view class='profile'>
+  <view class="profile-img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="profile-name"></open-data>
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+<button catchtap="oncleantap">清空小程序缓存</button>
+<view class="textview">
+  <text wx:if="{{userflag}}">{{info}}</text>
+  <text wx:else></text>
+</view>
+
+<view class="hr"></view>
+<view class="cast">
+  <text class="cast-font">评价一下：</text>
+  <textarea  bindblur="bindTextAreaBlur" auto-height placeholder="在此输入评价..."/>
+  <button class="bs" bindtap="ononon">提交反馈</button>
+</view>

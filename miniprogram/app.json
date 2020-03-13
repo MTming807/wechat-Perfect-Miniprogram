@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/posts/posts",
+    "pages/posts/posts-detail/posts-detail",
+    "pages/movies/mv",
+    "pages/movies/more/more",
+    "pages/movies/movie-detail/movie-detail",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#405f80"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/posts/posts",
+        "text": "食物",
+        "iconPath": "/images/tab/ciwei.png",
+        "selectedIconPath": "/images/tab/ciwei_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/mv",
+        "text": "电影",
+        "iconPath" : "/images/tab/dianying.png",
+        "selectedIconPath": "/images/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath" : "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,35 @@
+<!--pages/posts/posts.wxml-->
+<!-- 引入模板 ，引用的路径格式和其他的不一样-->
+<import src="posts-item/posts-item-template.wxml"/>
+
+<view>
+<!-- 事件冒泡处理方法 -->
+  <swiper catchtap="onswipertap" 
+  indicator-dots="true" 
+  autoplay="true" 
+  interval="2000" 
+  vertical="true" 
+  indicator-active-color="#fffff0">
+    <swiper-item>
+    <!-- 如果这里有bindtap=""不会阻止事件冒泡，上面swiper事件也会执行，但是catchtap就不行，到此为止 -->
+      <image src="/images/gundong/1.png" data-postid = "3"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/gundong/2.png" data-postid = "3"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/gundong/3.png" data-postid = "3"></image>
+    </swiper-item>
+  </swiper>
+
+<!-- 这么写之后格式必须一致 -->
+<!-- //数据绑定的名字必须是对象名，而不是变量名 -->
+<block wx:for="{{posts_key}}" wx:for-item="item">
+  <!-- 绑定自定义属性postid，使点击特定新闻会打开具有特定id的详情页 -->
+  <view catchtap="onPostTap" data-postid="{{item.postid}}">
+    <!-- 这里需要使用template is后面是模板名，data后面是数据传递的子元素  其他页面也可以用 -->
+    <template is="postsitem" data="{{...item}}"/>
+  </view>
+</block>
+  
+</view>

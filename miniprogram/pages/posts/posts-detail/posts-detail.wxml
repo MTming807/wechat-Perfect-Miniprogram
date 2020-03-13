@@ -1,0 +1,30 @@
+<!--pages/posts/posts-detail/posts-detail.wxml-->
+<!-- 先静后动，先样式再数据 -->
+<!-- 根据postid动态填充数据 -->
+
+<view class="container">
+  <image class="head-image" src="{{postdetaildata.headimgsrc}}"></image>
+  <image wx:if="{{played}}" catchtap = "onmusictap" class="audio" src="/images/music/music-stop.png"></image>
+  <image wx:else catchtap = "onmusictap" class="audio" src="/images/music/music-start.png"></image>
+  <view class="author-date">
+    <image class="avator" src="{{postdetaildata.imgsrc}}"></image>
+    <text class="author">{{postdetaildata.author}}</text>
+    <text class="const-text">发布于</text>
+    <text class="time">{{postdetaildata.datetime}}</text>
+  </view>
+  <text class="title">{{postdetaildata.title}}</text>
+  <view class="tool">
+    <view class="icon">
+    <!-- js语法，如果状态为collected，则显示collection.png，如果不是，则显示collection-anti.png，在js中控制collected -->
+    <!-- 从缓存里读取相应变量，决定是不是collected -->
+      <image wx:if="{{collected}}" catchtap="oncollectiontap" class="collectionicon" src="/images/icon/collection.png"></image>
+      <image wx:else catchtap="oncollectiontap" class="collectionicon" src="/images/icon/collection-anti.png"></image>
+      <image catchtap="onsharetap" class="shareicon" src="/images/icon/share.png"></image>
+    </view>
+    <view class="horizon">
+    
+    </view>
+  </view>
+  <text class="detail">{{postdetaildata.detail}}</text>
+</view>
+

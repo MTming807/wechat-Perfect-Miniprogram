@@ -1,0 +1,24 @@
+<import src="/pages/movies/movie/movie-template.wxml" />
+<template name="movielisttemplate">
+  <view class="movielist-container">
+    <view class="inner-container">
+      <view class="movie-head">
+        <text class="slogan">{{moviekind}}</text>
+        <!-- 第一步：data-moviekind="{{moviekind}}数据绑定传给more.js中? -->
+        <view catchtap="onmoretap" class="more" data-moviekind="{{moviekind}}">
+          <text class="more-text">更多</text>
+          <image class="more-img" src="/images/icon/arrow-right.png"></image>
+        </view>
+      </view>
+      <!-- 嵌套模板时不能出现相同的样式名 -->
+      <view class="movies-container">
+        <!-- <template is="movietemplate" />
+        <template is="movietemplate" />
+        <template is="movietemplate" /> -->
+        <block wx:for="{{movies}}" wx:for-item="movie">
+          <template is="movietemplate" data="{{...movie}}"/>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

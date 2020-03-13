@@ -1,0 +1,26 @@
+<import src="/pages/movies/movielist/movielist-template.wxml" />
+<import src="/pages/movies/grid/grid-template.wxml"/>
+
+<!-- 搜索框组件 -->
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="血战钢锯岭、你的名字" placeholder-class="placeholder" bindfocus="onbindfocus" bindconfirm="onbindconfirm"></input>
+  <image wx:if="{{searchpannelshow}}" src="/images/icon/xx.png" bindtap="oncancelimgtap" class="xximg"></image>
+</view>
+
+<!-- 传递数据自上而下 -->
+<view class="container" wx:if="{{containershow}}">
+  <view class="xiabianju">
+    <template is="movielisttemplate" data="{{...zhengzaireying}}"/>
+  </view>
+  <view class="xiabianju">
+    <template is="movielisttemplate" data="{{...jijiangshangying}}"/>
+  </view>
+  <view class="xiabianju">
+    <template is="movielisttemplate" data="{{...top250}}"/>
+  </view>
+</view>
+
+<view class="search-pannel" wx:if="{{searchpannelshow}}">
+    <template is="gridtemplate" data="{{...searchresult}}" />
+</view>

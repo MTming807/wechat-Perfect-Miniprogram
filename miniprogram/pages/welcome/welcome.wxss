@@ -1,0 +1,41 @@
+/* flex布局 弹性盒子 */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page{
+  background-color: #b2dcf0;
+  height: 100%;
+}
+
+.user-avator{
+  width:200rpx;
+  height:200rpx;
+  margin-top:160rpx;
+}
+
+.user-name{
+  margin-top:60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.moto{
+  font-size: 27rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #7c26ad;
+}
+
+.moto-container{
+  margin-top:300rpx;
+  /* 加一个框，看起来像按钮 */
+  /* border: 1px solid #7c26ad; */
+  height: 80rpx;
+  width: 200rpx;
+  /* 调整框的圆角 */
+  /* border-radius: 5px; */
+  text-align: center;
+}

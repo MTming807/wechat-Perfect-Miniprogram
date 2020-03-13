@@ -1,0 +1,11 @@
+@import "../movie/movie-template.wxss";
+.singlecontainer{
+  float: left;
+  margin-bottom: 40rpx;
+}
+
+.gridcontainer{
+  margin: 40rpx 0 40rpx 10rpx;
+  /* 为了给滑到最下面识别加载更多动作一个必要的高度 */
+  height: 1300rpx;
+}

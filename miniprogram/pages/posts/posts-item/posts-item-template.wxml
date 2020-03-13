@@ -1,0 +1,25 @@
+<template name="postsitem">
+  <view class="post-container">
+    <!-- 第一行 -->
+    <view class="post-author-data">
+      <image class="post-author" src="{{imgsrc}}"></image>
+      <!-- 数据绑定基本语法：{{}}将js的data发送到wxml -->
+      <!-- post-date是显示还是隐藏取决于text_condition的布尔值 -->
+      <text wx:if="{{text_condition}}" class="post-date">{{date}}</text>
+    </view>
+    <!-- 第二行 -->
+    <text class="post-title">{{title}}</text>
+    <!-- 第三行 -->
+    <image class="post-image" src="{{avatar}}"></image>
+    <!-- 第四行 -->
+    <text class="post-content">{{content}}</text>
+    <!-- 第五行 -->
+    <view class="post-like">
+    <!-- 这里最好用绝对路径，如果其他页面也要用，但不和post同级，那就找不到图片了 -->
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font">{{reading}}</text>
+      <image class="post-like-image" src="/images/icon/view.png"></image>
+      <text class="post-like-font">{{collection}}</text>
+    </view>
+  </view>
+</template>

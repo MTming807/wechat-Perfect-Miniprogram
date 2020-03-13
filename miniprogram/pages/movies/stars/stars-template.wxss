@@ -1,0 +1,24 @@
+.stars-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.stars{
+  display: flex;
+  flex-direction: row;
+  /* 五颗星星行排列，五颗星星高度和最右边距离 */
+  height: 17rpx;
+  margin-right: 24rpx;
+  margin-top: 10rpx;
+}
+
+.stars image{
+  /* stars下所有图片的样式  五颗星星之间的距离 */
+  padding-left: 3rpx;
+  height: 17rpx;
+  width: 17rpx;
+}
+
+.stars-score{
+  color: brown;
+}
